@@ -1,7 +1,7 @@
 require("dotenv").config();
 require("@nomiclabs/hardhat-waffle");
 
-const projectId = PROCESS.env.PROJECT_INFURA_ID;
+const projectId = process.env.PROJECT_INFURA_ID;
 
 const fs = require('fs')
 // p-key.txt contains the private key of the account metamask
