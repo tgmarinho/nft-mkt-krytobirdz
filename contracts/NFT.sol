@@ -12,14 +12,14 @@ contract NFT is ERC721URIStorage {
   Counters.Counter private _tokenIds;
   // counters allow us to keep track of tokenIds
 
-  // address of marketpalce for NFTs to interact
+  // address of marketplace for NFTs to interact
   address contractAddress;
 
   // Goal: give the NFT market the ability to transact with tokens or change ownership
   // setApprovalForAll allows us to do that with contract address
 
   // constructor set up our address
-  constructor(address marketplaceAddress) ERC721('KryotoBirdz', 'KBRD') {
+  constructor(address marketplaceAddress) ERC721('KryptoBirdz', 'KBRDZ') {
     contractAddress = marketplaceAddress;
   }
 
@@ -34,7 +34,6 @@ contract NFT is ERC721URIStorage {
     setApprovalForAll(contractAddress, true);
     // mint the token and set it for sale - return the id to do so
     return newItemID;
-
   }
 
 }
