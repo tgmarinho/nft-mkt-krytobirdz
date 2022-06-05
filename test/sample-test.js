@@ -11,12 +11,12 @@ describe("KBMarket", function () {
     const marketAddress = market.address;
 
     const NFT = await ethers.getContractFactory("NFT");
-    const nft = await NFT.deploy();
+    const nft = await NFT.deploy(marketAddress);
     await nft.deployed();
     const nftContractAddress = nft.address;
 
     // test to receive  listing price and auction price
-    let listingPrice = await market.listingPrice();
+    let listingPrice = await market.getListingPrice();
     listingPrice = listingPrice.toString();
 
     const auctionPrice = ethers.utils.parseUnits("100", 'ether');
